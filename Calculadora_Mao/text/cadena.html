@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="styles/style.css" rel="stylesheet" type="text/css" />
+    <title>Document</title>
+
+
+
+    <script>
+        /** let cadena = 'tres tristes tigres tres carro perro tigres';
+          console.log(cadena.indexOf('tigres'))
+         console.log(cadena.length)
+         console.log(cadena.indexOf('tigres', (cadena.length) / 2))
+         //busca a partir de la mitad de la cadena y me da la posicion contando desde cero
+         var cadena1 = "La mañana se nos echa encima.";
+         var cadena2 = cadena1.slice(3, -2);
+         console.log(cadena2);
+         //crea una nueva cadena de texto recortando la cadena original el parametro inical lo toma y el segundo parametro acorta y no lo muestra
+         console.log(p.replace(regex, 'ferret'));
+         //Reemplaza el texto en la cadena, se puede seleccionar la parte que se quiere reemplazar
+         str.trim()
+         //sirve para quitar los espacios en blanco al inicio y al final de la cadena
+         str.toUpperCase()
+         //
+         */
+    </script>
+</head>
+
+<body>
+    <img src="assets/bully1.png" alt="Foto de videojuego de ps2" id="imagenes">
+    <button onclick="cambiar()">Swich</button>
+
+    <button onclick="cambiarfondo()">CAMBIAR FONDO</button>
+
+    <input type="number" id="ntextos">
+    <button onclick="addElement()">Agregar div</button>
+
+
+    <div id="div1">
+        <h1 id="aqui"></h1>
+    </div>
+
+    <script>
+        console.log(imagenes.src);
+        function cambiar() {
+            if (imagenes.src == "http://127.0.0.1:5500/text/assets/bully1.png") {
+                imagenes.src = "assets/bully2.webp"
+            } else if (imagenes.src == "http://127.0.0.1:5500/text/assets/bully2.webp") {
+                imagenes.src = "http://127.0.0.1:5500/text/assets/bully1.png"
+            }
+
+        }
+
+
+        function cambiarfondo() {
+            let fondo = document.getElementsByTagName('body');
+
+            if (fondo[0].style.backgroundColor == '') {
+                fondo[0].style.backgroundColor = 'black';
+
+            } else if (fondo[0].style.backgroundColor == 'black') {
+                fondo[0].style.backgroundColor = 'green';
+
+            } else if(fondo[0].style.backgroundColor == 'green') {
+                fondo[0].style.backgroundColor = '';
+            }
+        }
+
+
+    function addElement() {
+  // crea un nuevo div
+  // y añade contenido
+    
+    
+    for (let i = 0; i < ntextos.value; i++) {
+        
+        let texto = document.createTextNode('hola pana ');
+        aqui.appendChild(texto);
+      }  
+     
+
+ 
+}
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,54 @@
+body{
+    background-image: url(assets/calculadoragrafi.jpg);
+    width: 100%;
+    height: 100%;
+}
+
+
+#calculadora_2{
+    display: grid;
+    place-items: center;
+    margin: auto;
+    margin-top: 10%;
+    height: 420px;
+    width: 320px;
+    border:  1px solid black;
+    border-radius: 5px;
+}
+
+#calculadora_2 form{
+    height: 100%;
+    width: 100%;
+    background-color: black;
+}
+
+#calculadora_2 input[type=text]{
+    width: 100%;
+    height: 25%;
+    cursor: default;
+    background-color: black;
+    color: white;
+    padding: 15px;
+    text-align: right;
+    font-size: 50px;
+    border: 0;
+    outline: none;
+}
+
+#calculadora_2 input[type=button], input[type=reset]{
+    width: 20%;
+    height: 17%;
+    cursor: pointer;  
+    font-weight: bold;
+    font-size: 26px;
+    color: black;
+    padding: 18px;
+    margin: 3px;
+    border: 0px;
+    border-radius: 100%;
+}
+
+#calculadora_2 .orange{
+    background-color: orange;
+    color: white;
+}

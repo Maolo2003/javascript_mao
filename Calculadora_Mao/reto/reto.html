@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="styles/style.css" rel="stylesheet" type="text/css" />
+    <title>Reto</title>
+</head>
+
+<body>
+
+
+
+
+
+    <input type="number" id="nbotones">
+    <button onclick="addElement()">Agregar boton</button>
+
+    <div id="div1"></div>
+
+
+
+
+
+
+
+    <script>
+        function addElement() {
+            // crea un nuevo div
+            // y añade contenido
+            for (let i = 0; i < nbotones.value; i++) {
+                let nuevoboton = document.createElement("button");
+                let espacio = document.createElement("br");
+                nuevoboton.innerHTML = "soy un boton"
+                nuevoboton.addEventListener("click",()=>{ alert('soy el boton: ' +i)}) 
+                div1.appendChild(nuevoboton);
+                div1.appendChild(espacio);
+
+            }
+        
+        }
+
+    
+
+    </script>
+
+</body>
+
+</html>

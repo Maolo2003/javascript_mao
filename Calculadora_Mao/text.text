@@ -1,0 +1,11 @@
+funcion por declaracion:
+Probablemente, la forma más común de crear las funciones,
+de esta manera podemos ejecutar la función saludar() incluso antes de haberla creado,
+ya que este tipo de función es compatible con el hoisting, que es una característica de JavaScript que,
+en resumen, primero busca las declaraciones de funciones y luego procesa el código.
+
+saludar(); // Hola
+ 
+function saludar(){
+  return "Hola";
+}
