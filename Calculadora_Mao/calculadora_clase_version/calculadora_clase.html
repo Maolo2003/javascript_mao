@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora_clase</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+    <style>
+        body {
+            background-image: url(assets/fondonubes.jpg);
+            background-size: cover;
+            /* Ajusta el ancho al 100% y mantiene la altura original */
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: center;
+            /* Puedes ajustar la posición si es necesario */
+            /* Otras propiedades de estilo según tus preferencias */
+        }
+
+
+
+
+        .container {
+            display: flex;
+            /* Utilizamos flexbox para crear un diseño flexible */
+        }
+
+        .column {
+            flex: 1;
+            /* Cada columna ocupará un tercio del ancho disponible */
+            margin-right: 10px;
+            /* Espacio entre columnas (ajusta según sea necesario) */
+            border: 1px solid #ccc;
+            /* Borde opcional para resaltar las columnas */
+            padding: 10px;
+            /* Espacio interno dentro de cada columna */
+        }
+
+
+
+
+        #calculadora1 {
+            background-image: url(assets/fondohomero.jpg);
+            background-size:contain;
+            
+            border: 1px solid black;
+            position: relative;
+            text-align: center;
+            align-items: center;
+            justify-content: center;
+           
+
+
+        }
+
+        #calculadora2 {
+            background-image: url(assets/fondobart.jpg);
+            background-repeat: no-repeat;
+            background-position: center;
+            border: 1px solid black;
+            position: relative;
+            text-align: center;
+            align-items: center;
+            justify-content: center;
+
+        }
+
+        #calculadora3 {
+            background-image: url(assets/fondomaggie.jpg);
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            border: 1px solid black;
+            position: relative;
+            text-align: center;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #cadenas {
+            border: 1px solid black;
+        }
+
+        #cadenas2 {
+            border: 1px solid black;
+        }
+
+        #tarea {
+            border: 1px solid black;
+        }
+
+        #espaciotareas {
+            border: 1px solid black;
+        }
+
+        #cadenita2{
+            color: white;
+        }
+
+        #registrar{
+            position: relative;
+            left: 15%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+        
+        
+    </style>
+
+
+</head>
+
+<body>
+
+
+    <div class="container">
+        <div class="column" id="calculadora1">
+            <h1>CALCULADORA</h1>
+            valor 1: <input type="text" id="v1" /> <br><br>
+            valor 2: <input type="text" id="v2"> <br><br>
+            resultado: <input type="text" id="r"> <br><br>
+            Multiplicacion: <input type="text" id="m"> <br><br>
+            Division: <input type="text" id="d"> <br><br>
+            Potencia: <input type="text" id="p"> <br><br>
+            Mayor: <input type="text" id="mayor"> <br><br>
+            Menor: <input type="text" id="menor"> <br><br>
+
+
+
+            <button id="sumab" onclick="misuma()">Sumar</button>
+            <button onclick="mimulti()">Multiplicacion</button>
+            <button onclick="midivi()">Dividir</button>
+            <button onclick="mipote()">Potencia</button>
+            <button onclick="mimayor()">Mayor</button>
+            <button onclick="mimenor()">Menor</button>
+
+        </div>
+
+        <div id="calculadora2" class="column">
+            <h1>CADENAS</h1>
+            <div id="cadenas">
+                Cadena 1: <br> <input type="text" id="cadena1" /> <br>
+               <label id="cadenita2">Cadena 2:</label>  <br> <input type="text" id="cadena2"> <br> <br>
+            </div> <br> <br>
+
+            resultado: <input type="text" id="rcadena"> <br> <br>
+
+            <div id="cadenas2">
+                <button>Comparar</button>
+                <button>Contar letra</button> <br>
+                <button>Espacios</button>
+                <button>insertar</button>
+            </div>
+
+
+
+
+
+        </div>
+
+
+
+        <div id="calculadora3" class="column">
+            <h1>VECTORES</h1>
+
+            <div id="tarea">
+                <label>Registrar tarea:</label> <br>
+                <textarea placeholder="Registrar tarea" id="descripciontarea"></textarea> 
+                <button id="registrar" onclick="addElement()">Registrar</button>
+            </div>
+            <br> <br>
+
+            <div id="espaciotareas">
+                <h1>TAREA</h1>
+                
+            </div>
+
+
+
+        </div>
+
+
+    </div>
+
+
+
+</body>
+</head>
+<body>
+    
+</body>
+</html>

@@ -11,40 +11,78 @@
     <title>Calculadora</title>
     <script>
         function misuma() {
-            let suma = parseInt(v1.value) + parseInt(v2.value);
-            r.value = suma
+            let valor1 = parseInt(v1.value) || 0;
+            let valor2 = parseInt(v2.value) || 0;
+            let valor3 = parseInt(v3.value) || 0;
+            
+            let suma = valor1 + valor2 + valor3;
+            
+            r.value = suma;
         }
+        
 
         function mimulti() {
-            let multi = parseInt(v1.value) * parseInt(v2.value);
-            m.value = multi
+            let valor1 = parseInt(v1.value) || 1;
+            let valor2 = parseInt(v2.value) || 1;
+            let valor3 = parseInt(v3.value) || 1;
+
+
+            let multi = valor1 * valor2 * valor3;
+            r.value = multi
         }
 
         function midivi() {
-            let divi = parseInt(v1.value) / parseInt(v2.value);
-            d.value = divi
+
+
+            let valor1 = parseInt(v1.value) || 1;
+            let valor2 = parseInt(v2.value) || 1;
+            let valor3 = parseInt(v3.value) || 1;
+
+            let divi = valor1 / valor2 / valor3;
+            r.value = divi
         }
 
         function mipote() {
-            let pote = parseInt(v1.value) ** parseInt(v2.value);
-            p.value = pote
+
+
+            let valor1 = parseInt(v1.value) || 1;
+            let valor2 = parseInt(v2.value) || 1;
+            let valor3 = parseInt(v3.value) || 1;
+
+            
+            let pote = valor1 ** valor2 ** valor3;
+            r.value = pote
         }
 
         function mimayor() {
-            if (parseInt(v1.value) > parseInt(v2.value)) {
-                mayor.value = v1.value
+            let valor1 = parseInt(v1.value) || 1;
+            let valor2 = parseInt(v2.value) || 1;
+            let valor3 = parseInt(v3.value) || 1;
+
+            if (valor1 > valor2 && valor1 > valor3) {
+                r.value = v1.value
             }
-            else { mayor.value = v2.value }
+            else if( valor2 > valor1 && valor2 > valor3){
+                r.value = v2.value
+            }
+            
+            else { r.value = v3.value }
 
         }
         function mimenor() {
-            if (parseInt(v1.value) < parseInt(v2.value)) {
-                menor.value = v1.value
+            let valor1 = parseInt(v1.value) || 1;
+            let valor2 = parseInt(v2.value) || 1;
+            let valor3 = parseInt(v3.value) || 1;
+
+            if (valor1 < valor2 && valor1 < valor3) {
+                r.value = v1.value
             }
-            else { menor.value = v2.value }
-
+            else if( valor2 < valor1 && valor2 < valor3){
+                r.value = v2.value
+            }
+            
+            else { r.value = v3.value }
         }
-
         function Agregarfila() {
             var hilera = document.createElement("tr");
             var celda = document.createElement("td");
@@ -58,9 +96,75 @@
             document.getElementsByName('body').appendChild(tablita)
 
         }
+        function addElement() {
+            // Crea un nuevo elemento div para contener la tarea
+            let tareaDiv = document.createElement("div");
+            
+            tareaDiv.classList.add("task");
+        
+            // Crea un botón que actuará como encabezado del desplegable
+            let tareaButton = document.createElement("button");
+            tareaButton.classList.add("btn", "btn-dark");
+            tareaButton.setAttribute("type", "button");
+            tareaButton.setAttribute("data-bs-toggle", "collapse");
+            tareaButton.setAttribute("data-bs-target", "#" + Date.now()); // Usa un ID único para cada tarea
+            tareaButton.setAttribute("aria-expanded", "false");
+            tareaButton.innerHTML = "Tarea";
+        
+            // Crea un div colapsable que contendrá la descripción de la tarea
+            let tareaCollapse = document.createElement("div");
+            tareaCollapse.classList.add("collapse");
+            tareaCollapse.setAttribute("id", Date.now()); // Asigna el mismo ID único usado en el botón
+        
+            // Crea un div para el contenido de la tarea
+            let tareaContent = document.createElement("div");
+            tareaContent.classList.add("card", "card-body");
+            tareaContent.innerHTML = descripciontarea.value
+        
+            // Agrega el botón y el contenido de la tarea al div de la tarea
+            tareaDiv.appendChild(tareaButton);
+            tareaDiv.appendChild(tareaCollapse);
+            tareaCollapse.appendChild(tareaContent);
+        
+            // Agrega el div de la tarea al contenedor principal
+            let espaciotareas = document.getElementById("espaciotareas"); // Asegúrate de que "espaciotareas" es el contenedor correcto
+            espaciotareas.appendChild(tareaDiv);
+        }
+        
+        function multiplo() {
+           
+        
+            if (v1.value % v2.value == 0) {
+                r.value = "El valor " + v2.value + " es múltiplo de " + v1.value;
+            } else{
+                r.value = "El valor " + v2.value + " no es múltiplo de " + v1.value;
+            }
+        }
+        
+        function misuma() {
+            let valor1 = parseInt(v1.value) || 0;
+            let valor2 = parseInt(v2.value) || 0;
+            let valor3 = parseInt(v3.value) || 0;
+            
+            let suma = valor1 - valor2 - valor3;
+            
+            r.value = suma;
+        }
+        
+        function compararcadena(){
+            
+           if (cadena1.value == cadena2.value ){
+               rcadena.value = "Las cadenas son iguales";
+           } else{
+               rcadena.value = "Las cadenas son diferentes";
+           }
+            
 
+        }
 
-
+        function ocurrencias(){
+            
+        }
     </script>
 
 
@@ -79,7 +183,11 @@
 
 
 
-
+        button{
+            background-color: black;
+            color: aliceblue;
+            border-radius: 20%;
+        }
         .container {
             display: flex;
             /* Utilizamos flexbox para crear un diseño flexible */
@@ -94,6 +202,7 @@
             /* Borde opcional para resaltar las columnas */
             padding: 10px;
             /* Espacio interno dentro de cada columna */
+            height: 500px;
         }
 
 
@@ -145,14 +254,17 @@
             border: 1px solid black;
         }
 
-        #tareas {
+        #tarea {
             border: 1px solid black;
         }
 
-        #tareas2 {
+        #espaciotareas {
             border: 1px solid black;
         }
 
+        #cadenita{
+            color: white;
+        }
         #cadenita2{
             color: white;
         }
@@ -163,6 +275,7 @@
             top: 50%;
             transform: translate(-50%, -50%);
         }
+        
         
     </style>
 
@@ -177,36 +290,33 @@
             <h1>CALCULADORA</h1>
             valor 1: <input type="text" id="v1" /> <br><br>
             valor 2: <input type="text" id="v2"> <br><br>
+            valor 3: <input type="text" id="v3"> <br><br>
             resultado: <input type="text" id="r"> <br><br>
-            Multiplicacion: <input type="text" id="m"> <br><br>
-            Division: <input type="text" id="d"> <br><br>
-            Potencia: <input type="text" id="p"> <br><br>
-            Mayor: <input type="text" id="mayor"> <br><br>
-            Menor: <input type="text" id="menor"> <br><br>
+           
 
 
-
-            <button id="sumab" onclick="misuma()">Sumar</button>
+            <button onclick="misuma()">Sumar</button>
+            <button onclick="resta">Restar</button>
             <button onclick="mimulti()">Multiplicacion</button>
             <button onclick="midivi()">Dividir</button>
             <button onclick="mipote()">Potencia</button>
             <button onclick="mimayor()">Mayor</button>
             <button onclick="mimenor()">Menor</button>
-
+            <button onclick="multiplo()">Multiplo</button>
         </div>
 
         <div id="calculadora2" class="column">
             <h1>CADENAS</h1>
             <div id="cadenas">
-                Cadena 1: <br> <input type="text" id="cadena1" /> <br>
+                <label id="cadenita">Cadena 1:</label>  <br> <input type="text" id="cadena1"> <br> 
                <label id="cadenita2">Cadena 2:</label>  <br> <input type="text" id="cadena2"> <br> <br>
             </div> <br> <br>
 
             resultado: <input type="text" id="rcadena"> <br> <br>
 
             <div id="cadenas2">
-                <button>Comparar</button>
-                <button>Contar letra</button> <br>
+                <button onclick="compararcadena()">Comparar</button>
+                <button onclick="ocurrencias()">Ocurrencias</button> <br>
                 <button>Espacios</button>
                 <button>insertar</button>
             </div>
@@ -222,16 +332,16 @@
         <div id="calculadora3" class="column">
             <h1>TAREAS</h1>
 
-            <div id="tareas">
+            <div id="tarea">
                 <label>Registrar tarea:</label> <br>
-                <textarea placeholder="Registrar tarea"></textarea> 
-                <button id="registrar">Registrar</button>
+                <textarea placeholder="Registrar tarea" id="descripciontarea"></textarea> 
+                <button id="registrar" onclick="addElement()">Registrar</button>
             </div>
             <br> <br>
 
-            <div id="tareas2">
+            <div id="espaciotareas">
                 <h1>TAREA</h1>
-                <label>Estudiar ingles</label>
+                
             </div>
 
 
