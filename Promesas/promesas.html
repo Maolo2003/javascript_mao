@@ -9,20 +9,25 @@
     <title>Document</title>
     <script>
 
-        fetch('https://pokeapi.co/api/v2/pokemon/25/')
-        .then(response => response.json())
-        .then(data => {
-            let imagen = document.createElement('img')
-            imagen.setAttribute('src', data.sprites.front_default)
-            document.getElementsByTagName('body')[0].appendChild(imagen)
-        })
+        
+
+        function pokemon(){
+            fetch('https://pokeapi.co/api/v2/pokemon/'+document.getElementById('pokemon').value+'/')
+            .then(response => response.json())
+            .then(data => {
+                let imagen = document.createElement('img')
+                imagen.setAttribute('src', data.sprites.front_default)
+                document.getElementsByTagName('body')[0].appendChild(imagen)
+            })
+        }
 
     </script>
 </head>
 
 <body>
 
-   
+   Digite su Numero de Poke: <input type="number" id="pokemon">
+   <button onclick="pokemon()">Pokemon</button>
 
    
 </body>
